@@ -1,0 +1,14 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+    	<h5>{{ title }}</h5>
+	</div>
+	
+	<div class="panel-body">
+ 		<input matInput placeholder="number" formControlName="lane.number"[(ngModel)]="lane.number">
+<p>
+          <button 
+		    (click)="updateLane(lane.number)" 
+		    class="btn btn-primary">update
+		</button>
+	</div> <!-- panel body -->	
+</div> <!-- panel panel-primary -->

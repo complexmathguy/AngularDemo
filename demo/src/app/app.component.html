@@ -1,0 +1,80 @@
+<div class="app-header">demo</div>
+
+<mat-sidenav-container class="app-container">
+    
+	<mat-sidenav #sidenav mode="side" opened class="app-sidenav">
+	
+		  <button mat-menu-item [matMenuTriggerFor]="AlleyMenu">Alley</button>
+		  <button mat-menu-item [matMenuTriggerFor]="GameMenu">Game</button>
+		  <button mat-menu-item [matMenuTriggerFor]="LaneMenu">Lane</button>
+		  <button mat-menu-item [matMenuTriggerFor]="LeagueMenu">League</button>
+		  <button mat-menu-item [matMenuTriggerFor]="MatchupMenu">Matchup</button>
+		  <button mat-menu-item [matMenuTriggerFor]="PlayerMenu">Player</button>
+		  <button mat-menu-item [matMenuTriggerFor]="TournamentMenu">Tournament</button>
+		
+		<mat-menu #AlleyMenu="matMenu">
+	  	<a routerLink="createAlley">
+	  		<button mat-menu-item>Add</button>
+	  	</a>
+		<a routerLink="indexAlley">
+	  		<button mat-menu-item>Show All</button>
+	  	</a>
+	</mat-menu>
+		<mat-menu #GameMenu="matMenu">
+	  	<a routerLink="createGame">
+	  		<button mat-menu-item>Add</button>
+	  	</a>
+		<a routerLink="indexGame">
+	  		<button mat-menu-item>Show All</button>
+	  	</a>
+	</mat-menu>
+		<mat-menu #LaneMenu="matMenu">
+	  	<a routerLink="createLane">
+	  		<button mat-menu-item>Add</button>
+	  	</a>
+		<a routerLink="indexLane">
+	  		<button mat-menu-item>Show All</button>
+	  	</a>
+	</mat-menu>
+		<mat-menu #LeagueMenu="matMenu">
+	  	<a routerLink="createLeague">
+	  		<button mat-menu-item>Add</button>
+	  	</a>
+		<a routerLink="indexLeague">
+	  		<button mat-menu-item>Show All</button>
+	  	</a>
+	</mat-menu>
+		<mat-menu #MatchupMenu="matMenu">
+	  	<a routerLink="createMatchup">
+	  		<button mat-menu-item>Add</button>
+	  	</a>
+		<a routerLink="indexMatchup">
+	  		<button mat-menu-item>Show All</button>
+	  	</a>
+	</mat-menu>
+		<mat-menu #PlayerMenu="matMenu">
+	  	<a routerLink="createPlayer">
+	  		<button mat-menu-item>Add</button>
+	  	</a>
+		<a routerLink="indexPlayer">
+	  		<button mat-menu-item>Show All</button>
+	  	</a>
+	</mat-menu>
+		<mat-menu #TournamentMenu="matMenu">
+	  	<a routerLink="createTournament">
+	  		<button mat-menu-item>Add</button>
+	  	</a>
+		<a routerLink="indexTournament">
+	  		<button mat-menu-item>Show All</button>
+	  	</a>
+	</mat-menu>
+	
+    </mat-sidenav>
+	
+	<mat-sidenav-content>
+		<div class="container" style="padding-top:10px">
+			<router-outlet></router-outlet>
+		</div>
+	</mat-sidenav-content>
+	
+</mat-sidenav-container>	

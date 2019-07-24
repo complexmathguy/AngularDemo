@@ -1,0 +1,34 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+    	<h5>{{ title }}</h5>
+	</div>
+	
+	<div class="panel-body">
+		<mat-form-field appearance="legacy">
+    		<mat-label>name</mat-label>
+		    <input matInput ngDefaultControl placeholder="name" name="name" [(ngModel)]="name">
+    		<mat-hint></mat-hint>
+  		</mat-form-field>
+<p>
+		<mat-form-field appearance="legacy">
+		    <mat-label>dateOfBirth</mat-label>
+		  	<input matInput ngDefaultControl [matDatepicker]="picker" placeholder="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth">
+			<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+			<mat-datepicker #picker></mat-datepicker>
+			<mat-hint></mat-hint>
+		</mat-form-field>
+<p>
+		<mat-form-field appearance="legacy">
+    		<mat-label>height</mat-label>
+		    <input matInput ngDefaultControl placeholder="height" name="height" [(ngModel)]="height">
+    		<mat-hint></mat-hint>
+  		</mat-form-field>
+<p>
+		<mat-checkbox name="isProfessional" ngDefaultControl [(ngModel)]="isProfessional">isProfessional</mat-checkbox>
+<p>
+           <button 
+		    (click)="addPlayer(name, dateOfBirth, height, isProfessional == true ? true : false)" 
+		    class="btn btn-primary">add
+		</button>
+	</div> <!-- panel body -->	
+</div> <!-- panel panel-primary -->

@@ -1,0 +1,38 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+    	<h5>{{ title }}</h5>
+	</div>
+	
+	<div class="panel-body">
+ 		<mat-form-field appearance="legacy">
+    		<mat-label>name</mat-label>
+		    <input matInput ngDefaultControl placeholder="name" name="tournament.name" [(ngModel)]="tournament.name">
+    		<mat-hint></mat-hint>
+  		</mat-form-field>
+<p>
+   		<mat-form-field appearance="legacy">
+    		<mat-label>Matchups</mat-label>
+			<mat-select placeholder="Matchups" multiple  [compareWith]="compareFn"  [(ngModel)]="tournament.Matchups">
+		    	<mat-option name="tournament.Matchups" ngDefaultControl  
+		    		*ngFor="let matchup of matchups"		    		 
+		    		[value]="matchup._id">
+		      		{{matchup.name}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+ 		<mat-form-field appearance="legacy">
+		    <mat-label>Type</mat-label>
+			<mat-select placeholder="Type" name="tournament.Type" [(ngModel)]="tournament.Type">
+		    	<mat-option ngDefaultControl *ngFor="let TournamentType of TournamentTypes" [value]="TournamentType">
+		      		{{TournamentType}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+              <button 
+		    (click)="updateTournament(tournament.name, tournament.Matchups, tournament.Type)" 
+		    class="btn btn-primary">update
+		</button>
+	</div> <!-- panel body -->	
+</div> <!-- panel panel-primary -->

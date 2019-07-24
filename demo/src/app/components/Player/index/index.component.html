@@ -1,0 +1,22 @@
+<h5>Player List</h5>
+<table class="table table-hover table-striped table-bordered table-sm">
+	<thead>
+		<tr style="color:white;background:black;text-align:center">
+			<td style="text-align:center">name</td>
+			<td style="text-align:center">dateOfBirth</td>
+			<td style="text-align:center">height</td>
+			<td style="text-align:center">isProfessional</td>
+			<td colspan="2">Actions</td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr *ngFor="let player of players" style="text-align:center">
+			<td style="vertical-align:middle">{{ player.name }}</td>
+			<td style="vertical-align:middle">{{ player.dateOfBirth }}</td>
+			<td style="vertical-align:middle">{{ player.height }}</td>
+			<td style="vertical-align:middle">{{ player.isProfessional }}</td>
+			<td style="vertical-align:middle"><a [routerLink]="['/editPlayer', player._id]" class="btn btn-primary btn-sm">Edit</a></td>
+			<td style="vertical-align:middle"><button (click)="deletePlayer(player._id)"  class="btn btn-danger btn-sm">Delete</button></td>
+		</tr>
+	</tbody>
+</table>
