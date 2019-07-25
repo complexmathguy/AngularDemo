@@ -1,0 +1,51 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+    	<h5>{{ title }}</h5>
+	</div>
+	
+	<div class="panel-body">
+ 		<mat-form-field appearance="legacy">
+    		<mat-label>name</mat-label>
+		    <input matInput ngDefaultControl placeholder="name" name="alley.name" [(ngModel)]="alley.name">
+    		<mat-hint></mat-hint>
+  		</mat-form-field>
+<p>
+   		<mat-form-field appearance="legacy">
+    		<mat-label>Leagues</mat-label>
+			<mat-select placeholder="Leagues" multiple  [compareWith]="compareFn"  [(ngModel)]="alley.Leagues">
+		    	<mat-option name="alley.Leagues" ngDefaultControl  
+		    		*ngFor="let league of leagues"		    		 
+		    		[value]="league._id">
+		      		{{league.name}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+   		<mat-form-field appearance="legacy">
+    		<mat-label>Tournaments</mat-label>
+			<mat-select placeholder="Tournaments" multiple  [compareWith]="compareFn"  [(ngModel)]="alley.Tournaments">
+		    	<mat-option name="alley.Tournaments" ngDefaultControl  
+		    		*ngFor="let tournament of tournaments"		    		 
+		    		[value]="tournament._id">
+		      		{{tournament.name}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+   		<mat-form-field appearance="legacy">
+    		<mat-label>Lanes</mat-label>
+			<mat-select placeholder="Lanes" multiple  [compareWith]="compareFn"  [(ngModel)]="alley.Lanes">
+		    	<mat-option name="alley.Lanes" ngDefaultControl  
+		    		*ngFor="let lane of lanes"		    		 
+		    		[value]="lane._id">
+		      		{{lane.number}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+                <button 
+		    (click)="updateAlley(alley.name, alley.Leagues, alley.Tournaments, alley.Lanes)" 
+		    class="btn btn-primary">update
+		</button>
+	</div> <!-- panel body -->	
+</div> <!-- panel panel-primary -->

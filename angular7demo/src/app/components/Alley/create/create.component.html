@@ -1,0 +1,51 @@
+<div class="panel panel-primary">
+	<div class="panel-heading">
+    	<h5>{{ title }}</h5>
+	</div>
+	
+	<div class="panel-body">
+		<mat-form-field appearance="legacy">
+    		<mat-label>name</mat-label>
+		    <input matInput ngDefaultControl placeholder="name" name="name" [(ngModel)]="name">
+    		<mat-hint></mat-hint>
+  		</mat-form-field>
+<p>
+		<mat-form-field appearance="legacy">
+    		<mat-label>Leagues</mat-label>
+			<mat-select placeholder="Leagues" multiple [(ngModel)]="Leagues">
+		    	<mat-option name="Leagues" ngDefaultControl  
+		    		*ngFor="let league of leagues"		    		 
+		    		[value]="league._id">
+		      		{{league.name}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+		<mat-form-field appearance="legacy">
+    		<mat-label>Tournaments</mat-label>
+			<mat-select placeholder="Tournaments" multiple [(ngModel)]="Tournaments">
+		    	<mat-option name="Tournaments" ngDefaultControl  
+		    		*ngFor="let tournament of tournaments"		    		 
+		    		[value]="tournament._id">
+		      		{{tournament.name}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+		<mat-form-field appearance="legacy">
+    		<mat-label>Lanes</mat-label>
+			<mat-select placeholder="Lanes" multiple [(ngModel)]="Lanes">
+		    	<mat-option name="Lanes" ngDefaultControl  
+		    		*ngFor="let lane of lanes"		    		 
+		    		[value]="lane._id">
+		      		{{lane.number}}
+		    	</mat-option>
+		  	</mat-select>
+		</mat-form-field>
+<p>
+            <button 
+		    (click)="addAlley(name, Leagues, Tournaments, Lanes)" 
+		    class="btn btn-primary">add
+		</button>
+	</div> <!-- panel body -->	
+</div> <!-- panel panel-primary -->
